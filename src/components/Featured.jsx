@@ -1,21 +1,20 @@
 import { useGetMoviesTopRatedQuery } from "../services/movies";
-import BestRatedItem from "./BestRatedItem";
+import BestRatedItem from "./BestRated/BestRatedItem";
 import TitleCategory from "./TitleCategory";
 
 function Featured() {
     const { data, isLoading, error } = useGetMoviesTopRatedQuery();
     return (
         <div>
-            <TitleCategory title={"mieux noté"}></TitleCategory>
+            <TitleCategory title={"mis en avant aujourd'hui"}></TitleCategory>
             {error ? (
                 <>Oh no, there was an error
-                {console.log(error)}
                 </>
             ) : isLoading ? (
                 <>Loading...</>
             ) : data ? (
-                <ul className="flex w-fit h-fit overflow-auto">
-                    {data.results.map((movie) => <BestRatedItem backdrop={movie.backdrop_path}></BestRatedItem>)}
+                <ul className="grid grid-flow-col grid-cols-none w-full h-fit overflow-auto scroll-smooth gap-4 px-4">
+                    {data.results.map((movie) => <BestRatedItem backdrop={movie.backdrop_path} title={movie.title} vote={movie.vote_average}></BestRatedItem>)}
                 </ul>
             ) : null}
         </div>

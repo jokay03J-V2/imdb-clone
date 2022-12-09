@@ -1,4 +1,4 @@
-export function getVideoUrl(key, provider) {
+export function getVideoUrl(key = "", provider = "Youtube") {
     switch (provider) {
         case "YouTube":
             return `https://youtube.com/embed/${key}`;

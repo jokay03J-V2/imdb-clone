@@ -14,10 +14,13 @@ export const tmdbApi = createApi({
     }),
     getMoviesTopRated: builder.query({
       query: () => `/movie/top_rated?api_key=${import.meta.env.VITE_API_KEY}&language=fr-FR`
+    }),
+    getMoviesByName: builder.query({
+      query: (name) => `/search/movie?api_key=${import.meta.env.VITE_API_KEY}&language=fr-FR&query=${name}`
     })
   }),
 })
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defiqned endpoints
-export const { useGetTrendingMoviesQuery, useGetMovieByIdQuery, useGetMoviesTopRatedQuery } = tmdbApi;
+export const { useGetTrendingMoviesQuery, useGetMovieByIdQuery, useGetMoviesTopRatedQuery, useGetMoviesByNameQuery } = tmdbApi;

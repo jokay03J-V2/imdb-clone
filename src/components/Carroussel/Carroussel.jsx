@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { useGetTrendingMoviesQuery } from "../services/movies";
+import { useGetTrendingMoviesQuery } from "../../services/movies";
 import CarrousselItem from "./CarrouselItem";
 
 function Carroussel() {

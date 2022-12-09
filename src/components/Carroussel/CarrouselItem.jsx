@@ -1,5 +1,5 @@
-import { useGetMovieByIdQuery } from "../services/movies";
-import { getVideoUrl } from "../utils/getVideoUrl";
+import { useGetMovieByIdQuery } from "../../services/movies";
+import { getVideoUrl } from "../../utils/getVideoUrl";
 import {BsFillBookmarkFill} from "react-icons/bs"
 
 function CarrousselItem({ idMovie, isShow }) {
@@ -13,7 +13,7 @@ function CarrousselItem({ idMovie, isShow }) {
                 <>Loading...</>
             ) : data ? (
                 <a href={data.homepage} className="w-full">
-                    <iframe className="h-40 w-full" src={getVideoUrl(data.videos.results[0].key, data.videos.results[0].site)} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                    <iframe className="h-40 w-full" src={getVideoUrl(data.videos.results[0]?.key,data.videos.results[0]?.site)} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                     <div className="flex items-center -translate-y-6">
                         <div className="relative">
                         <img src={`https://image.tmdb.org/t/p/w200/${data.poster_path}`} className="w-24 h-36" ></img>

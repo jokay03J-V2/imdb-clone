@@ -1,6 +1,6 @@
-import Carroussel from "../components/Carroussel";
+import Carroussel from "../components/Carroussel/Carroussel";
 import Featured from "../components/Featured";
-import NavBar from "../components/NavBar";
+import NavBar from "../components/Navbar/NavBar";
 
 function HomePage() {
     return (<div className="h-screen w-screen">
