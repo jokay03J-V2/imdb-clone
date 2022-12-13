@@ -11,7 +11,7 @@ function SearhcBar() {
 
     function handleClick(ev) {
         ev.preventDefault();
-        navigate(`/search?query=${inputValue}`)
+        navigate(`/imdb-clone/search?query=${inputValue}`)
         setInputValue("")
     }
 
