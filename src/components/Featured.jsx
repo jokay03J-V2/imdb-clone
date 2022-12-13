@@ -14,7 +14,7 @@ function Featured() {
                 <>Loading...</>
             ) : data ? (
                 <ul className="grid grid-flow-col grid-cols-none w-full h-fit overflow-auto scroll-smooth gap-4 px-4">
-                    {data.results.map((movie) => <BestRatedItem backdrop={movie.backdrop_path} title={movie.title} vote={movie.vote_average}></BestRatedItem>)}
+                    {data.results.map((movie) => <BestRatedItem key={movie.id} backdrop={movie.backdrop_path} title={movie.title} vote={movie.vote_average}></BestRatedItem>)}
                 </ul>
             ) : null}
         </div>
