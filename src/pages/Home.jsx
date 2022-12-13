@@ -3,7 +3,7 @@ import Featured from "../components/Featured";
 import NavBar from "../components/Navbar/NavBar";
 
 function HomePage() {
-    return (<div className="h-screen w-screen">
+    return (<div className="h-full w-full">
         <header><NavBar></NavBar></header>
         <main className="h-full bg-neutral-900">
             <div className="bg-neutral-800 h-fit relative">

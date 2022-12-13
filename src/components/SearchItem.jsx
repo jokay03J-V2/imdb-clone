@@ -1,7 +1,7 @@
 import { getYearsFromDate } from "../utils/getYearsFromDate";
 import { TbMovieOff } from "react-icons/tb"
 
-function SearchItem({ title, poster_path, release_date }) {
+function SearchItem({ title, poster_path, release_date, movie }) {
     return (<li className="w-full flex flex-col my-3">
         <div className="flex">
             {poster_path ? <img src={`https://image.tmdb.org/t/p/w200/${poster_path}`} className="h-auto w-12"></img> : 
